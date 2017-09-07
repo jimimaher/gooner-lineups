@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: red;
+  background: #f00000;
   color: white;
   font-size: 10px;
 }
@@ -11,41 +11,46 @@ ul{
   padding: 5px;
 }
 button{
-  background: white;
-  color: red;
+  margin: 15px 0 0;
+  background: #151d2d;
+  color: rgba(255,255,255,0.95);
   padding: 10px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
   font-size: 2rem;
+  border: 1px solid #151d2d;
 }
 button:hover{
-  background: rgba(255,255,255,0.95);
+  color: white;
+  border: 1px solid white;
 }
 button:focus{
   outline: none;
 }
 button:active{
-  background: rgba(255,255,255,0.9);
+  color: #9C824A;
 }
 li{
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 5px 0;
-  padding: 5px 0;
+  padding: 0 0 10px;
   text-align: center;
   list-style-type: none;
   position: relative;
+  box-sizing: border-box;
 }
 li::after{
   content: '';
   position: absolute;
   bottom: 0;
-  left: 40%;
-  background: white;
-  width: 20%;
-  height: 1px;
+  left: 45%;
+  background: #151d2d;
+  border-bottom: 3px solid #9C824A;
+  width: 10%;
+  height: 3px;
 }
 li:last-of-type::after{
   content: none;
