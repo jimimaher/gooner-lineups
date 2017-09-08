@@ -19,16 +19,15 @@ class StartingXI extends Component {
   render() {
     return (
       <div className="Starters">
-        <button onClick={this.generateXI}> Generate new XI </button>
+          <h1>{ this.props.mainState.squad.length != 0 ? 'Today\'s XI' : ' ' }</h1>
           <ul>
-            hi flubis i luv u
             {
-              // console.log(this.props.mainState)
               this.props.mainState.squad.map(function(player){
                 return <li key={'num' + player.number}> {player.name} </li>
               })
             }
           </ul>
+          <button onClick={this.generateXI}> { this.props.mainState.squad.length == 0 ? 'Build XI' : 'Rebuild XI' } </button>
       </div>
     );
   }

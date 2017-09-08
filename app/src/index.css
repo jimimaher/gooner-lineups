@@ -5,13 +5,17 @@ body {
   background: #f00000;
   color: white;
   font-size: 10px;
+  text-align: center;
 }
 ul{
   -webkit-padding-start: 0px;
   padding: 5px;
 }
+h1{
+  font-size: 3rem;
+}
 button{
-  margin: 15px 0 0;
+  margin: 15px 5px 0;
   background: #151d2d;
   color: rgba(255,255,255,0.95);
   padding: 10px;
