@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import players from './players';
 import shuffle from './shuffle';
+import StartingXI from './StartingXI';
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class App extends Component {
       squad: []
     }
     this.generateXI = this.generateXI.bind(this)
-    let fullSquad = players
   }
   generateXI () {
     shuffle(players)
@@ -22,21 +22,16 @@ class App extends Component {
     })
   }
   componentWillMount () {
+    this.generateXI()
   }
   componentDidMount () {
   }
   render() {
     return (
-      <div className="App">
-        <button onClick={this.generateXI}> Generate new XI </button>
-          <ul>
-            {
-              this.state.squad.map(function(player){
-                return <li key={'num' + player.number}> {player.name} </li>
-              })
-            }
-          </ul>
-      </div>
+        <StartingXI
+          mainState={this.state}
+          generateXI={this.generateXI}
+        />
     );
   }
 }

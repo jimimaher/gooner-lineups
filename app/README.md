@@ -6,6 +6,9 @@
 
 to dos..
 - Tactical Lineup
+  - Field
+  - Positions
+
 - Subs
 - Field
 - Delay the XI

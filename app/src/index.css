@@ -30,6 +30,7 @@ button:focus{
 }
 button:active{
   color: #9C824A;
+  border: 1px solid #9C824A;
 }
 li{
   font-size: 2rem;
