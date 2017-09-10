@@ -10,14 +10,21 @@ class App extends Component {
     super(props)
     this.state = {
       squad: [],
-      formattedSquad: {},
-      formation: null
+      // formattedSquad: {},
+      formation: null,
+      formationRows: null,
+      formationSplit: null
     }
     this.generateXI = this.generateXI.bind(this)
     this.setFormation = this.setFormation.bind(this)
   }
   setFormation (event) {
-    this.setState({formation: event.target.textContent})
+    var positions = event.target.textContent.split('-')
+    this.setState({
+      formation: event.target.textContent,
+      formationRows: positions.length,
+      formationSplit: positions
+    })
   }
   generateXI () {
     shuffle(players)
@@ -33,6 +40,7 @@ class App extends Component {
   componentDidMount () {
   }
   render() {
+
     return (
       <div>
           <StartingXI

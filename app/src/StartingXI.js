@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import players from './players';
-import shuffle from './shuffle';
 
 class StartingXI extends Component {
   constructor(props) {
@@ -19,7 +17,7 @@ class StartingXI extends Component {
   render() {
     return (
       <div className="Starters">
-          <h1>{ this.props.mainState.squad.length != 0 ? 'Today\'s XI' : ' ' }</h1>
+          <h1>{ this.props.mainState.squad.length !== 0 ? 'Today\'s XI' : ' ' }</h1>
           <ul>
             {
               this.props.mainState.squad.map(function(player){
@@ -27,7 +25,7 @@ class StartingXI extends Component {
               })
             }
           </ul>
-          <button onClick={this.generateXI}> { this.props.mainState.squad.length == 0 ? 'Build XI' : 'Rebuild XI' } </button>
+          <button onClick={this.generateXI}> { this.props.mainState.squad.length === 0 ? 'Build XI' : 'Rebuild XI' } </button>
       </div>
     );
   }
