@@ -1,15 +1,14 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import FieldView from './FieldView';
 
 class Tactical extends Component {
   constructor(props) {
     super(props)
     this.setFormation = this.setFormation.bind(this)
-    this.buildTacticalLineup = this.buildTacticalLineup.bind(this)
   }
   setFormation(event) {
-    this.buildTacticalLineup()
     this.props.setFormation(event)
     this.props.mainState.formation !== null ? event.target.textContent = this.props.mainState.formation : event.target.remove()
   }
@@ -17,35 +16,57 @@ class Tactical extends Component {
   }
   componentDidMount () {
   }
-  buildTacticalLineup() {
-    if (this.props.mainState.formationSplit != null ){
-      var tacticalObject = [
-        0: [],
-        1: [],
-        2: [],
-        3: [],
-        4: []
-      ];
-      console.log( 'row0 GK - '+ this.props.mainState.squad[0].name )
+  render() {
+    let mainState = this.props.mainState;
+    let formSplit = mainState.formationSplit;
+    let squad = mainState.squad;
+    let keeper = '', defenders = '', mids = '', attackers = '', strikers = '';
 
-      for( var i = 1; i < Number(this.props.mainState.formationSplit[0]) + 1; i++ ){
-        console.log( 'row1 DEF - '+ this.props.mainState.squad[i].name )
-        //put these guys in row 1
+    if (formSplit != null ){
+      // console.log( 'row0 GK - '+ squad[0].name )
+      keeper = squad[0].name
+
+      for( var i = 0; i < formSplit[0]; i++){
+        // defenders += '<div class="def">'+squad[i].name+'</div>'
+        defenders += squad[i].name + ' '
       }
 
-      for( var i = Number(this.props.mainState.formationSplit[0] + 1); i < Number(this.props.mainState.formationSplit[1]) + 1; i++ ){
-        console.log( 'row2 MID - '+ this.props.mainState.squad[i].name )
-        //put these guys in row 1
+      let nextRow = formSplit[0] + formSplit[1];
+      for( var h = formSplit[0]; h < nextRow; h++){
+        // mids += '<div class="mid">'+squad[h].name+'</div>'
+        mids += squad[h].name + ' '
+      }
+
+      let nextRow2 = formSplit[0] + formSplit[1] + formSplit[2];
+      for( var j = nextRow; j < nextRow2; j++){
+        // attackers += '<div class="att">'+squad[j].name+'</div>'
+        attackers += squad[j].name + ' '
+      }
+
+      let nextRow3 = formSplit[0] + formSplit[1] + formSplit[2] + formSplit[3];
+      for( var k = nextRow2; k < nextRow3; k++){
+        // strikers += '<div class="st">'+squad[k].name+'</div>'
+        strikers += squad[k].name + ' '
       }
     }
-  }
-  render() {
 
-    let state = this.props.mainState;
+    let renderFieldView = null;
+    if( mainState.formation != null ){
+      renderFieldView =
+          <FieldView
+            mainState={mainState}
+            keeper={keeper}
+            defenders={defenders}
+            mids={mids}
+            attackers={attackers}
+            strikers={strikers}
+          />
+    }
+
     return (
       <div className="Tactic">
         <h1>
-          { state.formation === null ? 'Choose your formation:' : 'Formation: ' + state.formation }
+          { mainState.formation === null ? 'Choose your formation:' : 'Formation: ' + mainState.formation }
         </h1>
 
         <div id="formations">
@@ -55,19 +76,8 @@ class Tactical extends Component {
           <button onClick={this.setFormation}>3-4-3</button>
         </div>
 
-        <div id="tacticalLineup" className={ 'rows-'+(state.formation != null ? state.formation.split('-').length : null) }>
-          <div className="row gk">
-            // <div>{ state.squad.length > 0 ? state.squad[0].name : null }</div>
-          </div>
-          <div className="row">
-          </div>
-          <div className="row">
-          </div>
-          <div className="row">
-          </div>
-          <div className="row">
-          </div>
-        </div>
+        {renderFieldView}
+
       </div>
     );
   }

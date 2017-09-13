@@ -19,7 +19,9 @@ class App extends Component {
     this.setFormation = this.setFormation.bind(this)
   }
   setFormation (event) {
-    var positions = event.target.textContent.split('-')
+    var positions = event.target.textContent.split('-').map(function(el){
+      return Number(el)
+    })
     this.setState({
       formation: event.target.textContent,
       formationRows: positions.length,
@@ -41,6 +43,11 @@ class App extends Component {
   }
   render() {
 
+    let renderTactical = null;
+    if( this.state.squad.length === 11 ){
+      renderTactical = <Tactical mainState={this.state} setFormation={this.setFormation} />
+    }
+
     return (
       <div>
           <StartingXI
@@ -48,10 +55,7 @@ class App extends Component {
             mainState={this.state}
             generateXI={this.generateXI}
           />
-          <Tactical
-            mainState={this.state}
-            setFormation={this.setFormation}
-          />
+          {renderTactical}
       </div>
     );
   }
