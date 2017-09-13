@@ -12,7 +12,7 @@ ul{
   padding: 5px;
 }
 h1{
-  font-size: 3rem;
+  font-size: 2rem;
 }
 button{
   margin: 15px 5px 0;
@@ -37,7 +37,7 @@ button:active{
   border: 1px solid #9C824A;
 }
 li{
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 5px 0;
@@ -59,4 +59,37 @@ li::after{
 }
 li:last-of-type::after{
   content: none;
+}
+#tacticalLineup{
+  width: 95%;
+  max-width: 600px;
+  height: 500px;
+  margin: 50px auto;
+  border: 3px solid white;
+  box-sizing: border-box;
+  padding: 30px 0 0;
+}
+#tacticalLineup.rows-3 .row{
+  height: 33.3333333%;
+}
+#tacticalLineup.rows-3 .row:last-of-type{
+  display: none;
+}
+#tacticalLineup.rows-4 .row{
+  height: 25%;
+}
+#tacticalLineup .row{
+  box-sizing: border-box;
+  background: green;
+  border: 1px solid limegreen;
+  width: 100%;
+}
+#tacticalLineup .row > div{
+  font-size: 1rem;
+  margin: 5px;
+  display: inline;
+}
+#tacticalLineup .row.gk{
+  height: 30px;
+  margin: -30px 0 0;
 }
