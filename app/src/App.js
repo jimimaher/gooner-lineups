@@ -42,6 +42,8 @@ class App extends Component {
   componentDidMount () {
   }
   render() {
+    const fullSquad = players
+    // console.log(fullSquad)
 
     let renderTactical = null;
     if( this.state.squad.length === 11 ){

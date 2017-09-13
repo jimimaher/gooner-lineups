@@ -13,9 +13,17 @@ ul{
 }
 h1{
   font-size: 2rem;
+  width: 100%;
+  background: #151d2d;
+  margin: 0;
+  padding: 20px 0;
+}
+h2{
+  font-size: 1.5rem;
+  padding: 20px 0 0;
 }
 button{
-  margin: 15px 5px 0;
+  margin: 10px 5px 0;
   background: #151d2d;
   color: rgba(255,255,255,0.95);
   padding: 10px;
@@ -24,6 +32,9 @@ button{
   border-radius: 5px;
   font-size: 2rem;
   border: 1px solid #151d2d;
+}
+button.medium{
+  font-size: 1rem;
 }
 button:hover{
   color: white;
@@ -37,7 +48,7 @@ button:active{
   border: 1px solid #9C824A;
 }
 li{
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 5px 0;
@@ -63,8 +74,8 @@ li:last-of-type::after{
 #tacticalLineup{
   width: 95%;
   max-width: 600px;
-  height: 500px;
-  margin: 50px auto;
+  height: 700px;
+  margin: 20px auto;
   border: 3px solid white;
   box-sizing: border-box;
   padding: 30px 0 0;
@@ -80,16 +91,33 @@ li:last-of-type::after{
 }
 #tacticalLineup .row{
   box-sizing: border-box;
-  background: green;
-  border: 1px solid limegreen;
+  background: darkgreen;
+  /*border: 1px solid limegreen;*/
   width: 100%;
 }
 #tacticalLineup .row > div{
   font-size: 1rem;
-  margin: 5px;
-  display: inline;
+  padding: 5px 1%;
+  display: inline-block;
+}
+#tacticalLineup .row:not(:first-of-type) > div:first-of-type,
+#tacticalLineup .row:not(:first-of-type) > div:last-of-type{
+  transform: translateY(10px);
+}
+#tacticalLineup .row:nth-of-type(4) > div:nth-of-type(2){
+  transform: translateY(20px);
 }
 #tacticalLineup .row.gk{
   height: 30px;
   margin: -30px 0 0;
+}
+.playerCard{
+  position: relative;
+  text-align: center;
+}
+.playerCard span{
+  top: 20px;
+  width: 100%;
+  left: 0;
+  position: absolute;
 }

@@ -12,12 +12,12 @@ class StartingXI extends Component {
   componentWillMount () {
   }
   componentDidMount () {
-    console.log(this.props.mainState)
+    // console.log(this.props.mainState)
   }
   render() {
     return (
       <div className="Starters">
-          <h1>{ this.props.mainState.squad.length !== 0 ? 'Today\'s XI' : ' ' }</h1>
+          <h1>{ this.props.mainState.squad.length !== 0 ? 'Today\'s XI:' : 'Welcome to Gooner Lineups!' }</h1>
           <ul>
             {
               this.props.mainState.squad.map(function(player){
@@ -25,7 +25,7 @@ class StartingXI extends Component {
               })
             }
           </ul>
-          <button onClick={this.generateXI}> { this.props.mainState.squad.length === 0 ? 'Build XI' : 'Rebuild XI' } </button>
+          <button className="medium" onClick={this.generateXI}> { this.props.mainState.squad.length === 0 ? 'Build XI' : 'Tinker' } </button>
       </div>
     );
   }
