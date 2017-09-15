@@ -30,29 +30,29 @@ class Tactical extends Component {
       // console.log( 'row0 GK - '+ squad[0].name )
       keeper = squad[0].name
       keeperArray.push(squad[0])
-
-      for( var i = 0; i < formSplit[0]; i++){
+      
+      for( var i = 1; i < formSplit[0] + 1; i++){
         // defenders += '<div class="def">'+squad[i].name+'</div>'
         defenders += squad[i].name + ' '
         defendersArray.push(squad[i])
       }
 
 
-      let nextRow = formSplit[0] + formSplit[1];
-      for( var h = formSplit[0]; h < nextRow; h++){
+      let nextRow = formSplit[0] + formSplit[1] + 1;
+      for( var h = formSplit[0] + 1; h < nextRow; h++){
         // mids += '<div class="mid">'+squad[h].name+'</div>'
         mids += squad[h].name + ' '
         midsArray.push(squad[h])
       }
 
-      let nextRow2 = formSplit[0] + formSplit[1] + formSplit[2];
+      let nextRow2 = formSplit[0] + formSplit[1] + formSplit[2] + 1;
       for( var j = nextRow; j < nextRow2; j++){
         // attackers += '<div class="att">'+squad[j].name+'</div>'
         attackers += squad[j].name + ' '
         attackersArray.push(squad[j])
       }
 
-      let nextRow3 = formSplit[0] + formSplit[1] + formSplit[2] + formSplit[3];
+      let nextRow3 = formSplit[0] + formSplit[1] + formSplit[2] + formSplit[3] + 1;
       for( var k = nextRow2; k < nextRow3; k++){
         // strikers += '<div class="st">'+squad[k].name+'</div>'
         strikers += squad[k].name + ' '
