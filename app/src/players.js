@@ -116,15 +116,15 @@ const players = [
      "contractUntil":"2023-06-30",
      "marketValue":null
   },
-  {
-     "name":"Carl Jenkinson",
-     "position":"Right-Back",
-     "jerseyNumber":25,
-     "dateOfBirth":"1992-02-08",
-     "nationality":"England",
-     "contractUntil":"2018-06-30",
-     "marketValue":null
-  },
+  // {
+  //    "name":"Carl Jenkinson",
+  //    "position":"Right-Back",
+  //    "jerseyNumber":25,
+  //    "dateOfBirth":"1992-02-08",
+  //    "nationality":"England",
+  //    "contractUntil":"2018-06-30",
+  //    "marketValue":null
+  // },
   {
      "name":"Mathieu Debuchy",
      "position":"Right-Back",
@@ -269,15 +269,15 @@ const players = [
      "contractUntil":"2022-06-30",
      "marketValue":null
   },
-  {
-     "name":"Joel Campbell",
-     "position":"Right Wing",
-     "jerseyNumber":39,
-     "dateOfBirth":"1992-06-26",
-     "nationality":"Costa Rica",
-     "contractUntil":"2018-06-30",
-     "marketValue":null
-  },
+  // {
+  //    "name":"Joel Campbell",
+  //    "position":"Right Wing",
+  //    "jerseyNumber":39,
+  //    "dateOfBirth":"1992-06-26",
+  //    "nationality":"Costa Rica",
+  //    "contractUntil":"2018-06-30",
+  //    "marketValue":null
+  // },
   {
      "name":"Chuba Akpom",
      "position":"Centre-Forward",
