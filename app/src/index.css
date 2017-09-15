@@ -97,7 +97,7 @@ li.notyet{
   opacity: 0;
   display: none;
 }
-@media screen and (min-width: 940px){
+@media screen and (min-width: 768px){
   li{
     font-size: 1.5rem;
   }
@@ -133,7 +133,7 @@ li:last-of-type::after{
     height: 300px;
   }
 }
-@media screen and (min-width: 940px){
+@media screen and (min-width: 768px){
   #field,
   #tacticalLineup{
     height: 500px;
@@ -176,7 +176,7 @@ li:last-of-type::after{
   padding: 5px 0;
   display: inline-block;
 }
-@media screen and (min-width: 940px){
+@media screen and (min-width: 768px){
   #tacticalLineup .row > div{
     padding: 5px 1%;
   }
@@ -205,7 +205,7 @@ li:last-of-type::after{
   position: relative;
   text-align: center;
 }
-@media screen and (min-width: 940px){
+@media screen and (min-width: 768px){
   .playerCard{
     margin: 40px 5px 0;
   }
