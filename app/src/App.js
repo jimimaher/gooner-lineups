@@ -45,19 +45,34 @@ class App extends Component {
     const fullSquad = players
     // console.log(fullSquad)
 
+    let renderStarters = null;
+    if( this.state.formation == null ){
+      renderStarters =
+        <StartingXI
+          setFormation={this.setFormation}
+          mainState={this.state}
+          generateXI={this.generateXI}
+          revealXI={this.revealXI}
+        />
+    }
+
     let renderTactical = null;
     if( this.state.squad.length === 11 ){
-      renderTactical = <Tactical mainState={this.state} setFormation={this.setFormation} />
+      renderTactical =
+        <Tactical
+          mainState={this.state}
+          setFormation={this.setFormation}
+        />
     }
+
+
 
     return (
       <div>
           <div id="bg"></div>
-          <StartingXI
-            setFormation={this.setFormation}
-            mainState={this.state}
-            generateXI={this.generateXI}
-          />
+          <h1>{ this.state.squad.length !== 0 ? 'Today\'s XI:' : 'Gooner Lineups' }</h1>
+          {renderStarters}
+          <button className="medium" onClick={this.generateXI}> { this.state.squad.length === 0 ? 'Build XI' : 'Tinker' } </button>
           {renderTactical}
       </div>
     );
