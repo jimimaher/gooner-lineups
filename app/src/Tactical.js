@@ -30,7 +30,7 @@ class Tactical extends Component {
       // console.log( 'row0 GK - '+ squad[0].name )
       keeper = squad[0].name
       keeperArray.push(squad[0])
-      
+
       for( var i = 1; i < formSplit[0] + 1; i++){
         // defenders += '<div class="def">'+squad[i].name+'</div>'
         defenders += squad[i].name + ' '
@@ -75,7 +75,7 @@ class Tactical extends Component {
     return (
       <div className="Tactic">
         <h2>
-          { mainState.formation === null ? 'Choose your formation:' : 'Formation: ' + mainState.formation }
+          { mainState.formation === null ? 'Choose formation:' : 'Formation: ' + mainState.formation }
         </h2>
 
         <div id="formations">
