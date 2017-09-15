@@ -79,7 +79,7 @@ button:active{
   border: 1px solid #9C824A;
 }
 li{
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 5px 0;
@@ -88,6 +88,11 @@ li{
   list-style-type: none;
   position: relative;
   box-sizing: border-box;
+}
+@media screen and (min-width: 940px){
+  li{
+    font-size: 1.5rem;
+  }
 }
 li::after{
   content: '';
@@ -105,13 +110,20 @@ li:last-of-type::after{
 #field,
 #tacticalLineup{
   position: relative;
-  font-size: 1rem;
+  font-size: 0.5rem;
   width: 95%;
   max-width: 650px;
-  height: 600px;
+  height: 300px;
   margin: 20px auto;
   box-sizing: border-box;
   padding: 30px 0 0;
+}
+@media screen and (min-width: 940px){
+  #field,
+  #tacticalLineup{
+    height: 650px;
+    font-size: 1rem;
+  }
 }
 #fieldView{
   position: relative;
@@ -146,8 +158,13 @@ li:last-of-type::after{
   width: 100%;
 }
 #tacticalLineup .row > div{
-  padding: 5px 1%;
+  padding: 5px 0;
   display: inline-block;
+}
+@media screen and (min-width: 940px){
+  #tacticalLineup .row > div{
+    padding: 5px 1%;
+  }
 }
 #tacticalLineup .row:not(:first-of-type) > div:first-of-type,
 #tacticalLineup .row:not(:first-of-type) > div:last-of-type{
