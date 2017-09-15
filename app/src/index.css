@@ -39,6 +39,7 @@ body {
   z-index: 50;
 }
 ul{
+  margin: 0;
   -webkit-padding-start: 0px;
   padding: 5px;
 }
@@ -50,11 +51,12 @@ h1{
   padding: 20px 0;
 }
 h2{
+  margin: 10px 0;
   font-size: 1.5rem;
-  padding: 20px 0 0;
+  padding: 10px 0 0;
 }
 button{
-  margin: 10px 5px 0;
+  margin: 5px;
   background: #151d2d;
   color: rgba(255,255,255,0.95);
   padding: 10px;
@@ -79,6 +81,9 @@ button:active{
   border: 1px solid #9C824A;
 }
 li{
+  opacity: 1;
+  transition: opacity 0.5s;
+  display: block;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -88,6 +93,10 @@ li{
   list-style-type: none;
   position: relative;
   box-sizing: border-box;
+}
+li.notyet{
+  opacity: 0;
+  display: none;
 }
 @media screen and (min-width: 940px){
   li{
@@ -113,15 +122,22 @@ li:last-of-type::after{
   font-size: 0.5rem;
   width: 95%;
   max-width: 650px;
-  height: 300px;
+  height: 250px;
   margin: 20px auto;
   box-sizing: border-box;
   padding: 30px 0 0;
 }
+@media screen and (min-width: 375px){
+  #field,
+  #tacticalLineup{
+    font-size: 0.65rem;
+    height: 300px;
+  }
+}
 @media screen and (min-width: 940px){
   #field,
   #tacticalLineup{
-    height: 650px;
+    height: 500px;
     font-size: 1rem;
   }
 }
@@ -185,11 +201,17 @@ li:last-of-type::after{
   padding: 0 10px 20px 10px;
 }
 .playerCard{
-  margin: 40px 5px 0;
+  margin: 20px 2px 0;
   font-weight: 900;
   position: relative;
   text-align: center;
 }
+@media screen and (min-width: 940px){
+  .playerCard{
+    margin: 40px 5px 0;
+  }
+}
+
 .playerCard span{
   font-weight: 100;
   top: 20px;
