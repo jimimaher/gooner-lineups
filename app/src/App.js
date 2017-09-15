@@ -52,6 +52,7 @@ class App extends Component {
 
     return (
       <div>
+          <div id="bg"></div>
           <StartingXI
             setFormation={this.setFormation}
             mainState={this.state}

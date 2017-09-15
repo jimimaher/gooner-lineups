@@ -6,9 +6,8 @@ class FieldView extends Component {
   render () {
     // console.log(this.props.midsArray)
     return(
-      <div>
-        <h2> Tactical Lineup </h2>
-
+      <div id="fieldView">
+        <div id="field"></div>
         <div id="tacticalLineup" className={ 'rows-'+(this.props.mainState.formation != null ? this.props.mainState.formation.split('-').length : null) }>
           <div className="row gk">
             {
