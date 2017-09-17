@@ -97,6 +97,11 @@ li.notyet{
   opacity: 0;
   display: none;
 }
+li.captain::before{
+  font-weight: 100;
+  right: 25px;
+  content: "(C)";
+}
 @media screen and (min-width: 768px){
   li{
     font-size: 1.5rem;
