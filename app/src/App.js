@@ -73,7 +73,7 @@ class App extends Component {
 
     let renderInfo = null;
     if( this.state.squad.length === 0 ){
-      renderInfo = <h3 className="intro">We have finally cracked the case on how Wenger makes team selections. He chooses at random! Now you can choose Arsenal's starting lineup just line Arsene!</h3>
+      renderInfo = <h3 className="intro">We have finally cracked the case on how Wenger makes team selections. He chooses at random! Now you can choose Arsenal's starting lineup just like Arsene!</h3>
     }
 
     let renderReset = null;
