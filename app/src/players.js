@@ -36,6 +36,15 @@ const players = [
      "marketValue":null
   },
   {
+     "name":"Riess Nelson",
+     "position":"Right Wing",
+     "jerseyNumber":61,
+     "dateOfBirth":"1999-12-10",
+     "nationality":"England",
+     "contractUntil":null,
+     "marketValue":null
+  },
+  {
      "name":"Matt Macey",
      "position":"Keeper",
      "jerseyNumber":54,
