@@ -5,16 +5,19 @@ import shuffle from './shuffle';
 import StartingXI from './StartingXI';
 import Tactical from './Tactical';
 
+
+const initialState = {
+  squad: [],
+  formation: null,
+  formationRows: null,
+  formationSplit: null
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      squad: [],
-      // formattedSquad: {},
-      formation: null,
-      formationRows: null,
-      formationSplit: null
-    }
+    this.state = initialState
+    this.resetState = this.resetState.bind(this)
     this.generateXI = this.generateXI.bind(this)
     this.setFormation = this.setFormation.bind(this)
   }
@@ -36,6 +39,9 @@ class App extends Component {
         return { name: el.name, number: el.jerseyNumber, pos: el.position  }
       })
     })
+  }
+  resetState() {
+    this.setState(initialState)
   }
   componentWillMount () {
   }
@@ -65,15 +71,19 @@ class App extends Component {
         />
     }
 
-
+    let renderReset = null;
+    if( this.state.squad.length === 11 && this.state.formation != null ){
+      renderReset = <button className="medium" onClick={this.resetState}>Start Over</button>
+    }
 
     return (
       <div>
           <div id="bg"></div>
           <h1>{ this.state.squad.length !== 0 ? 'Today\'s XI:' : 'Gooner Lineups' }</h1>
-          {renderStarters}
           <button className="medium" onClick={this.generateXI}> { this.state.squad.length === 0 ? 'Build XI' : 'Tinker' } </button>
+          {renderStarters}
           {renderTactical}
+          {renderReset}
       </div>
     );
   }

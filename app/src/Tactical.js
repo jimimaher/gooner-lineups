@@ -78,6 +78,8 @@ class Tactical extends Component {
           { mainState.formation === null ? 'Choose formation:' : 'Formation: ' + mainState.formation }
         </h2>
 
+        {renderFieldView}
+
         <div id="formations">
           <button className="medium" onClick={this.setFormation}>4-3-3</button>
           <button className="medium" onClick={this.setFormation}>4-4-2</button>
@@ -86,7 +88,6 @@ class Tactical extends Component {
           <button className="medium" onClick={this.setFormation}>3-4-2-1</button>
         </div>
 
-        {renderFieldView}
 
       </div>
     );
